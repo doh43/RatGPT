@@ -33,8 +33,6 @@ client.login(DISCORD_API_KEY);
 
 
 client.on('messageCreate', (message) => {
-	console.log(message.content);
-	console.log(message.createdAt.toDateString);
-	console.log(message.author.tag);
-
+	if (message.author.bot) return;
+	return message.reply(`${message.content}`);
 });
